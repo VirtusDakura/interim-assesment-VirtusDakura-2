@@ -55,7 +55,7 @@ export async function register(req, res, next) {
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
-      return res.status(409).json({ message: "Email already in use." });
+      return res.status(409).json({ message: "Registration failed. Please try again with different credentials." });
     }
 
     const user = await User.create({ name, email, password });
