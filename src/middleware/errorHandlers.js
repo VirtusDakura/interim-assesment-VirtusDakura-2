@@ -7,6 +7,15 @@ export function errorHandler(err, req, res, next) {
     return next(err);
   }
 
+  if (err?.name === "ValidationError") {
+    const messages = Object.values(err.errors).map((e) => e.message);
+    return res.status(400).json({ message: messages.join(" ") });
+  }
+
+  if (err?.type === "entity.parse.failed" || err instanceof SyntaxError) {
+    return res.status(400).json({ message: "Malformed JSON in request body." });
+  }
+
   if (err?.code === 11000) {
     const field = Object.keys(err.keyPattern || {})[0] || "field";
     return res.status(409).json({ message: `Duplicate value for ${field}.` });

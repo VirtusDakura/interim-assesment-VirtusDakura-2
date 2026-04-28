@@ -40,6 +40,18 @@ export async function register(req, res, next) {
       return res.status(400).json({ message: "Password must be at least 6 characters." });
     }
 
+    if (name.length > 50) {
+      return res.status(400).json({ message: "Name must not exceed 50 characters." });
+    }
+
+    if (email.length > 100) {
+      return res.status(400).json({ message: "Email must not exceed 100 characters." });
+    }
+
+    if (password.length > 72) {
+      return res.status(400).json({ message: "Password must not exceed 72 characters." });
+    }
+
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
