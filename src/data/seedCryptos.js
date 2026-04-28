@@ -34,4 +34,39 @@ export const seedCryptos = [
     image: "https://assets.coingecko.com/coins/images/5/large/dogecoin.png",
     change24h: 5.67,
   },
+  {
+    name: "XRP",
+    symbol: "XRP",
+    price: 0.623,
+    image: "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png",
+    change24h: 1.15,
+  },
+  {
+    name: "Polkadot",
+    symbol: "DOT",
+    price: 7.24,
+    image: "https://assets.coingecko.com/coins/images/12171/large/polkadot.png",
+    change24h: -0.54,
+  },
+  {
+    name: "Chainlink",
+    symbol: "LINK",
+    price: 18.92,
+    image: "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png",
+    change24h: 3.21,
+  },
+  {
+    name: "Polygon",
+    symbol: "MATIC",
+    price: 0.89,
+    image: "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png",
+    change24h: -2.10,
+  },
+  {
+    name: "Litecoin",
+    symbol: "LTC",
+    price: 85.34,
+    image: "https://assets.coingecko.com/coins/images/2/large/litecoin.png",
+    change24h: 0.85,
+  }
 ];
